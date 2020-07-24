@@ -3,7 +3,8 @@ class DirectorsController < ApplicationController
 
   # GET /directors
   def index
-    @directors = Director.page(params[:page]).per(10)
+    @q = Director.ransack(params[:q])
+    @directors = @q.result(:distinct => true).includes(:movies).page(params[:page]).per(10)
   end
 
   # GET /directors/1

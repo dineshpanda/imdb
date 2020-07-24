@@ -42,7 +42,7 @@
 
     <%= f.label :actor_id %>
     <!-- Input for actor_id start -->
-    <%= f.number_field :actor_id, class: actor_id_class, placeholder: "Enter actor" %>
+    <%= f.select :actor_id, options_from_collection_for_select(Actor.all, :id, :name, @casting.actor_id), {}, class: "form-control" %>
     <!-- Input for actor_id end -->
     <% if actor_id_was_invalid %>
       <% casting.errors.full_messages_for(:actor_id).each do |message| %>

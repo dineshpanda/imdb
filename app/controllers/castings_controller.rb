@@ -4,6 +4,11 @@ class CastingsController < ApplicationController
   # GET /castings
   def index
     @castings = Casting.all
+    @location_hash = Gmaps4rails.build_markers(@castings.where.not(:addr_latitude => nil)) do |casting, marker|
+      marker.lat casting.addr_latitude
+      marker.lng casting.addr_longitude
+      marker.infowindow "<h5><a href='/castings/#{casting.id}'>#{casting.character_name}</a></h5><small>#{casting.addr_formatted_address}</small>"
+    end
   end
 
   # GET /castings/1

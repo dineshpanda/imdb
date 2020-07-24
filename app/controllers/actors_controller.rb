@@ -3,7 +3,7 @@ class ActorsController < ApplicationController
 
   # GET /actors
   def index
-    @actors = Actor.all
+    @actors = Actor.page(params[:page]).per(10)
   end
 
   # GET /actors/1

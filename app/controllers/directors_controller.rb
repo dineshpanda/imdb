@@ -3,7 +3,7 @@ class DirectorsController < ApplicationController
 
   # GET /directors
   def index
-    @directors = Director.all
+    @directors = Director.page(params[:page]).per(10)
   end
 
   # GET /directors/1

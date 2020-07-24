@@ -3,7 +3,7 @@ class MoviesController < ApplicationController
 
   # GET /movies
   def index
-    @movies = Movie.all
+    @movies = Movie.page(params[:page]).per(10)
   end
 
   # GET /movies/1

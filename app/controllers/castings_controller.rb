@@ -3,7 +3,7 @@ class CastingsController < ApplicationController
 
   # GET /castings
   def index
-    @castings = Casting.all
+    @castings = Casting.page(params[:page]).per(10)
     @location_hash = Gmaps4rails.build_markers(@castings.where.not(:addr_latitude => nil)) do |casting, marker|
       marker.lat casting.addr_latitude
       marker.lng casting.addr_longitude

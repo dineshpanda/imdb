@@ -13,7 +13,7 @@ class Api::V1::CastingsController < Api::V1::GraphitiController
     casting = CastingResource.build(params)
 
     if casting.save
-      render jsonapi: casting, status: 201
+      render jsonapi: casting, status: :created
     else
       render jsonapi_errors: casting
     end
@@ -33,7 +33,7 @@ class Api::V1::CastingsController < Api::V1::GraphitiController
     casting = CastingResource.find(params)
 
     if casting.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: casting
     end

@@ -1,10 +1,10 @@
-require 'open-uri'
+require "open-uri"
 class Casting < ApplicationRecord
   before_validation :geocode_addr
 
   def geocode_addr
-    if self.addr.present?
-      url = "https://maps.googleapis.com/maps/api/geocode/json?key=#{ENV['GMAP_API_KEY']}&address=#{URI.encode(self.addr)}"
+    if addr.present?
+      url = "https://maps.googleapis.com/maps/api/geocode/json?key=#{ENV['GMAP_API_KEY']}&address=#{URI.encode(addr)}"
 
       raw_data = open(url).read
 
@@ -31,10 +31,9 @@ class Casting < ApplicationRecord
 
   # Validations
 
-  validates :actor_id, :presence => true
+  validates :actor_id, presence: true
 
-  validates :movie_id, :presence => true
+  validates :movie_id, presence: true
 
   # Scopes
-
 end

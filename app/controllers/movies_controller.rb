@@ -1,10 +1,10 @@
 class MoviesController < ApplicationController
-  before_action :set_movie, only: [:show, :edit, :update, :destroy]
+  before_action :set_movie, only: %i[show edit update destroy]
 
   # GET /movies
   def index
     @q = Movie.ransack(params[:q])
-    @movies = @q.result(:distinct => true).includes(:characters, :dictator, :actors).page(params[:page]).per(10)
+    @movies = @q.result(distinct: true).includes(:characters, :dictator, :actors).page(params[:page]).per(10)
   end
 
   # GET /movies/1
@@ -18,17 +18,16 @@ class MoviesController < ApplicationController
   end
 
   # GET /movies/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /movies
   def create
     @movie = Movie.new(movie_params)
 
     if @movie.save
-      message = 'Movie was successfully created.'
-      if Rails.application.routes.recognize_path(request.referrer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
-        redirect_back fallback_location: request.referrer, notice: message
+      message = "Movie was successfully created."
+      if Rails.application.routes.recognize_path(request.referer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
+        redirect_back fallback_location: request.referer, notice: message
       else
         redirect_to @movie, notice: message
       end
@@ -40,7 +39,7 @@ class MoviesController < ApplicationController
   # PATCH/PUT /movies/1
   def update
     if @movie.update(movie_params)
-      redirect_to @movie, notice: 'Movie was successfully updated.'
+      redirect_to @movie, notice: "Movie was successfully updated."
     else
       render :edit
     end
@@ -50,22 +49,22 @@ class MoviesController < ApplicationController
   def destroy
     @movie.destroy
     message = "Movie was successfully deleted."
-    if Rails.application.routes.recognize_path(request.referrer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
-      redirect_back fallback_location: request.referrer, notice: message
+    if Rails.application.routes.recognize_path(request.referer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
+      redirect_back fallback_location: request.referer, notice: message
     else
       redirect_to movies_url, notice: message
     end
   end
 
-
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_movie
-      @movie = Movie.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def movie_params
-      params.require(:movie).permit(:title, :year, :director_id, :image)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_movie
+    @movie = Movie.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def movie_params
+    params.require(:movie).permit(:title, :year, :director_id, :image)
+  end
 end

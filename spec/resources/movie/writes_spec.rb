@@ -1,13 +1,13 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe MovieResource, type: :resource do
-  describe 'creating' do
+  describe "creating" do
     let(:payload) do
       {
         data: {
-          type: 'movies',
-          attributes: { }
-        }
+          type: "movies",
+          attributes: {},
+        },
       }
     end
 
@@ -15,23 +15,23 @@ RSpec.describe MovieResource, type: :resource do
       MovieResource.build(payload)
     end
 
-    it 'works' do
-      expect {
+    it "works" do
+      expect do
         expect(instance.save).to eq(true), instance.errors.full_messages.to_sentence
-      }.to change { Movie.count }.by(1)
+      end.to change { Movie.count }.by(1)
     end
   end
 
-  describe 'updating' do
+  describe "updating" do
     let!(:movie) { create(:movie) }
 
     let(:payload) do
       {
         data: {
           id: movie.id.to_s,
-          type: 'movies',
-          attributes: { } # Todo!
-        }
+          type: "movies",
+          attributes: {}, # Todo!
+        },
       }
     end
 
@@ -39,25 +39,25 @@ RSpec.describe MovieResource, type: :resource do
       MovieResource.find(payload)
     end
 
-    xit 'works (add some attributes and enable this spec)' do
-      expect {
+    xit "works (add some attributes and enable this spec)" do
+      expect do
         expect(instance.update_attributes).to eq(true)
-      }.to change { movie.reload.updated_at }
+      end.to change { movie.reload.updated_at }
       # .and change { movie.foo }.to('bar') <- example
     end
   end
 
-  describe 'destroying' do
+  describe "destroying" do
     let!(:movie) { create(:movie) }
 
     let(:instance) do
       MovieResource.find(id: movie.id)
     end
 
-    it 'works' do
-      expect {
+    it "works" do
+      expect do
         expect(instance.destroy).to eq(true)
-      }.to change { Movie.count }.by(-1)
+      end.to change { Movie.count }.by(-1)
     end
   end
 end

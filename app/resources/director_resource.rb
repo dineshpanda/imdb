@@ -8,8 +8,7 @@ class DirectorResource < ApplicationResource
 
   # Direct associations
 
-  has_many   :movies
+  has_many :movies
 
   # Indirect associations
-
 end

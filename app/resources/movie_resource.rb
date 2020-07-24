@@ -9,6 +9,10 @@ class MovieResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :dictator,
+             resource: DirectorResource,
+             foreign_key: :director_id
+
   has_many   :characters,
              resource: CastingResource
 

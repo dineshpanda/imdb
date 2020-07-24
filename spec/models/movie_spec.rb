@@ -4,6 +4,8 @@ RSpec.describe Movie, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:dictator) }
+
     it { should have_many(:characters) }
 
     end

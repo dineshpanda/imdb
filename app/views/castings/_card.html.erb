@@ -22,7 +22,9 @@
 
       <dt>Profile</dt>
       <!-- Display profile start -->
-      <dd><%= casting.profile %></dd>
+      <dd>
+        <%= cl_image_tag @casting.profile, class: "img-fluid" %>
+      </dd>
       <!-- Display profile end -->
 
       <dt>Addr</dt>

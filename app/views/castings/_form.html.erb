@@ -94,7 +94,7 @@
 
     <%= f.label :profile %>
     <!-- Input for profile start -->
-    <%= f.text_field :profile, class: profile_class, placeholder: "Enter profile" %>
+    <%= f.file_field :profile, class: "form-control" %>
     <!-- Input for profile end -->
     <% if profile_was_invalid %>
       <% casting.errors.full_messages_for(:profile).each do |message| %>

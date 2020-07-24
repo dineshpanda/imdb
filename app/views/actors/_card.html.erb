@@ -17,7 +17,9 @@
 
       <dt>Image</dt>
       <!-- Display image start -->
-      <dd><%= actor.image %></dd>
+      <dd>
+        <%= cl_image_tag @actor.image, class: "img-fluid" %>
+      </dd>
       <!-- Display image end -->
 
       <dt>Dob</dt>

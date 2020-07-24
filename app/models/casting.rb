@@ -1,4 +1,6 @@
 class Casting < ApplicationRecord
+  mount_uploader :profile, ProfileUploader
+
   # Direct associations
 
   belongs_to :actor

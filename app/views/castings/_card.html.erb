@@ -6,35 +6,25 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Movie</dt>
-      <!-- Display movie_id start -->
       <dd><%= casting.movie_id %></dd>
-      <!-- Display movie_id end -->
 
       <dt>Actor</dt>
-      <!-- Display actor_id start -->
       <dd><%= casting.actor_id %></dd>
-      <!-- Display actor_id end -->
 
       <dt>Character name</dt>
-      <!-- Display character_name start -->
       <dd><%= casting.character_name %></dd>
-      <!-- Display character_name end -->
 
       <dt>Profile</dt>
-      <!-- Display profile start -->
       <dd>
         <%= cl_image_tag @casting.profile, class: "img-fluid" %>
       </dd>
-      <!-- Display profile end -->
 
       <dt>Addr</dt>
-      <!-- Display addr start -->
       <dd>
         <div>
           <%= render partial: "castings/one_photo_map" %>
         </div>
       </dd>
-      <!-- Display addr end -->
 
     </dl>
 
@@ -43,21 +33,17 @@
         <%= link_to_show_or_back casting, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link casting start -->
       <div class="col">
         <%= link_to edit_casting_url(casting), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link casting end -->
 
-      <!-- Delete link casting start -->
       <div class="col">
         <%= link_to casting, method: :delete, data: { confirm: "Do you really want to delete this casting?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link casting end -->
     </div>
   </div>
 

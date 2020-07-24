@@ -1,7 +1,6 @@
 <% was_validated = casting.errors.any? %>
 
 <%= form_with(model: casting, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for movie_id start -->
   <div class="form-group">
     <% movie_id_class = "form-control" %>
     <% movie_id_was_invalid = casting.errors.include?(:movie_id) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :movie_id %>
-    <!-- Input for movie_id start -->
     <%= f.select :movie_id, options_from_collection_for_select(Movie.all, :id, :title, @casting.movie_id), {}, class: "form-control" %>
-    <!-- Input for movie_id end -->
     <% if movie_id_was_invalid %>
       <% casting.errors.full_messages_for(:movie_id).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for movie_id end -->
-  <!-- Label and input for actor_id start -->
   <div class="form-group">
     <% actor_id_class = "form-control" %>
     <% actor_id_was_invalid = casting.errors.include?(:actor_id) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :actor_id %>
-    <!-- Input for actor_id start -->
     <%= f.select :actor_id, options_from_collection_for_select(Actor.all, :id, :name, @casting.actor_id), {}, class: "form-control" %>
-    <!-- Input for actor_id end -->
     <% if actor_id_was_invalid %>
       <% casting.errors.full_messages_for(:actor_id).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,8 +45,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for actor_id end -->
-  <!-- Label and input for character_name start -->
   <div class="form-group">
     <% character_name_class = "form-control" %>
     <% character_name_was_invalid = casting.errors.include?(:character_name) %>
@@ -67,9 +58,7 @@
     <% end %>
 
     <%= f.label :character_name %>
-    <!-- Input for character_name start -->
     <%= f.text_field :character_name, class: character_name_class, placeholder: "Enter character name" %>
-    <!-- Input for character_name end -->
     <% if character_name_was_invalid %>
       <% casting.errors.full_messages_for(:character_name).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -78,8 +67,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for character_name end -->
-  <!-- Label and input for profile start -->
   <div class="form-group">
     <% profile_class = "form-control" %>
     <% profile_was_invalid = casting.errors.include?(:profile) %>
@@ -93,9 +80,7 @@
     <% end %>
 
     <%= f.label :profile %>
-    <!-- Input for profile start -->
     <%= f.file_field :profile, class: "form-control" %>
-    <!-- Input for profile end -->
     <% if profile_was_invalid %>
       <% casting.errors.full_messages_for(:profile).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -104,8 +89,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for profile end -->
-  <!-- Label and input for addr start -->
   <div class="form-group">
     <% addr_class = "form-control" %>
     <% addr_was_invalid = casting.errors.include?(:addr) %>
@@ -119,9 +102,7 @@
     <% end %>
 
     <%= f.label :addr %>
-    <!-- Input for addr start -->
     <%= f.text_field :addr, class: addr_class, placeholder: "Enter addr" %>
-    <!-- Input for addr end -->
     <% if addr_was_invalid %>
       <% casting.errors.full_messages_for(:addr).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -130,6 +111,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for addr end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>

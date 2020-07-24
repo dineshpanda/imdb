@@ -6,26 +6,18 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Name</dt>
-      <!-- Display name start -->
       <dd><%= actor.name %></dd>
-      <!-- Display name end -->
 
       <dt>Bio</dt>
-      <!-- Display bio start -->
       <dd><%= actor.bio %></dd>
-      <!-- Display bio end -->
 
       <dt>Image</dt>
-      <!-- Display image start -->
       <dd>
         <%= cl_image_tag @actor.image, class: "img-fluid" %>
       </dd>
-      <!-- Display image end -->
 
       <dt>Dob</dt>
-      <!-- Display dob start -->
       <dd><%= actor.dob %></dd>
-      <!-- Display dob end -->
 
     </dl>
 
@@ -34,21 +26,17 @@
         <%= link_to_show_or_back actor, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link actor start -->
       <div class="col">
         <%= link_to edit_actor_url(actor), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link actor end -->
 
-      <!-- Delete link actor start -->
       <div class="col">
         <%= link_to actor, method: :delete, data: { confirm: "Do you really want to delete this actor?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link actor end -->
     </div>
   </div>
 

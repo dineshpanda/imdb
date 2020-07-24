@@ -1,39 +1,21 @@
-<!-- Form movie start -->
 <%= form_with(model: @movie, local: true) do |f| %>
-<!-- Form movie end -->
 
-  <!-- Label and input for title start -->
   <div class="form-group">
     <%= f.label :title %>
-    <!-- Input for title start -->
     <%= f.text_field :title, class: "form-control" %>
-    <!-- Input for title end -->
   </div>
-  <!-- Label and input for title end -->
 
-  <!-- Label and input for year start -->
   <div class="form-group">
     <%= f.label :year %>
-    <!-- Input for year start -->
     <%= f.text_field :year, class: "form-control" %>
-    <!-- Input for year end -->
   </div>
-  <!-- Label and input for year end -->
 
-  <!-- Label and input for director_id start -->
-  <!-- Input for director_id start -->
   <%= f.hidden_field :director_id, value: @director.id %>
-  <!-- Input for director_id end -->
-  <!-- Label and input for director_id end -->
 
-  <!-- Label and input for image start -->
   <div class="form-group">
     <%= f.label :image %>
-    <!-- Input for image start -->
     <%= f.text_field :image, class: "form-control" %>
-    <!-- Input for image end -->
   </div>
-  <!-- Label and input for image end -->
 
   <%= f.submit "Create movie", class: "btn btn-block btn-outline-secondary" %>
 <% end %>

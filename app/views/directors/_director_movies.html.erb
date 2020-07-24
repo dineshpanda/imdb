@@ -10,24 +10,18 @@
   <ul class="list-group list-group-flush">
     <% @director.movies.each do |movie| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <%= link_to movie.title, movie_path(movie) %>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%= link_to movie, method: :delete, data: { confirm: "Do you really want to delete this movie" } do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="director_movies_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "directors/director_movies_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

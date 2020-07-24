@@ -1,48 +1,26 @@
-<!-- Form casting start -->
 <%= form_with(model: @casting, local: true) do |f| %>
-<!-- Form casting end -->
 
-  <!-- Label and input for movie_id start -->
-  <!-- Input for movie_id start -->
   <%= f.hidden_field :movie_id, value: @movie.id %>
-  <!-- Input for movie_id end -->
-  <!-- Label and input for movie_id end -->
 
-  <!-- Label and input for actor_id start -->
   <div class="form-group">
     <%= f.label :actor_id %>
-    <!-- Input for actor_id start -->
     <%= f.select :actor_id, options_from_collection_for_select(Actor.all, :id, :name, @casting.actor_id), {}, class: "form-control" %>
-    <!-- Input for actor_id end -->
   </div>
-  <!-- Label and input for actor_id end -->
 
-  <!-- Label and input for character_name start -->
   <div class="form-group">
     <%= f.label :character_name %>
-    <!-- Input for character_name start -->
     <%= f.text_field :character_name, class: "form-control" %>
-    <!-- Input for character_name end -->
   </div>
-  <!-- Label and input for character_name end -->
 
-  <!-- Label and input for profile start -->
   <div class="form-group">
     <%= f.label :profile %>
-    <!-- Input for profile start -->
     <%= f.file_field :profile, class: "form-control" %>
-    <!-- Input for profile end -->
   </div>
-  <!-- Label and input for profile end -->
 
-  <!-- Label and input for addr start -->
   <div class="form-group">
     <%= f.label :addr %>
-    <!-- Input for addr start -->
     <%= f.text_field :addr, class: "form-control" %>
-    <!-- Input for addr end -->
   </div>
-  <!-- Label and input for addr end -->
 
   <%= f.submit "Create casting", class: "btn btn-block btn-outline-secondary" %>
 <% end %>

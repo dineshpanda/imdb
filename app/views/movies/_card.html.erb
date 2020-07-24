@@ -1,0 +1,56 @@
+<div class="card mb-3">
+  <h2 class="card-header h4">
+    Movie #<%= movie.id %>
+  </h2>
+
+  <div class="card-body">
+    <dl class="mb-1">
+      <dt>Title</dt>
+      <!-- Display title start -->
+      <dd><%= movie.title %></dd>
+      <!-- Display title end -->
+
+      <dt>Year</dt>
+      <!-- Display year start -->
+      <dd><%= movie.year %></dd>
+      <!-- Display year end -->
+
+      <dt>Director</dt>
+      <!-- Display director_id start -->
+      <dd><%= movie.director_id %></dd>
+      <!-- Display director_id end -->
+
+      <dt>Image</dt>
+      <!-- Display image start -->
+      <dd><%= movie.image %></dd>
+      <!-- Display image end -->
+
+    </dl>
+
+    <div class="row">
+      <div class="col">
+        <%= link_to_show_or_back movie, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
+      </div>
+
+      <!-- Edit link movie start -->
+      <div class="col">
+        <%= link_to edit_movie_url(movie), class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </div>
+      <!-- Edit link movie end -->
+
+      <!-- Delete link movie start -->
+      <div class="col">
+        <%= link_to movie, method: :delete, data: { confirm: "Do you really want to delete this movie?" }, class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </div>
+      <!-- Delete link movie end -->
+    </div>
+  </div>
+
+  <div class="card-footer text-muted">
+    Last updated <%= time_ago_in_words(movie.updated_at) %> ago
+  </div>
+</div>

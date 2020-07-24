@@ -10,6 +10,8 @@ RSpec.describe Actor, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:movies) }
+
     end
 
     describe "Validations" do

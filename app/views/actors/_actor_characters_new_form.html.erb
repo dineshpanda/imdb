@@ -6,7 +6,7 @@
   <div class="form-group">
     <%= f.label :movie_id %>
     <!-- Input for movie_id start -->
-    <%= f.text_field :movie_id, class: "form-control" %>
+    <%= f.select :movie_id, options_from_collection_for_select(Movie.all, :id, :title, @casting.movie_id), {}, class: "form-control" %>
     <!-- Input for movie_id end -->
   </div>
   <!-- Label and input for movie_id end -->

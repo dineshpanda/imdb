@@ -16,7 +16,7 @@
 
     <%= f.label :movie_id %>
     <!-- Input for movie_id start -->
-    <%= f.number_field :movie_id, class: movie_id_class, placeholder: "Enter movie" %>
+    <%= f.select :movie_id, options_from_collection_for_select(Movie.all, :id, :title, @casting.movie_id), {}, class: "form-control" %>
     <!-- Input for movie_id end -->
     <% if movie_id_was_invalid %>
       <% casting.errors.full_messages_for(:movie_id).each do |message| %>

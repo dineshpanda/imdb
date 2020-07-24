@@ -5,6 +5,8 @@ class Movie < ApplicationRecord
 
   # Validations
 
+  validates :title, :presence => true
+
   # Scopes
 
 end

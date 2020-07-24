@@ -5,6 +5,8 @@ class Director < ApplicationRecord
 
   # Validations
 
+  validates :name, :presence => true
+
   # Scopes
 
 end

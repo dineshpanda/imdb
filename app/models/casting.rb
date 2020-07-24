@@ -5,6 +5,8 @@ class Casting < ApplicationRecord
 
   # Validations
 
+  validates :movie_id, :presence => true
+
   # Scopes
 
 end

@@ -12,5 +12,7 @@ RSpec.describe Casting, type: :model do
 
     describe "Validations" do
 
+    it { should validate_presence_of(:movie_id) }
+
     end
 end

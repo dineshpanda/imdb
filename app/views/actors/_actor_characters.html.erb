@@ -10,7 +10,7 @@
   <ul class="list-group list-group-flush">
     <% @actor.characters.each do |casting| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <%= link_to casting.character_name, casting_path(casting) %>
+        <%= link_to casting.to_s, casting_path(casting) %>
 
         <%= link_to casting, method: :delete, data: { confirm: "Do you really want to delete this casting" } do %>
           <i class="fas fa-trash-alt"></i>

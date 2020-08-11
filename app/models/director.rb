@@ -11,4 +11,8 @@ class Director < ApplicationRecord
   validates :name, presence: true
 
   # Scopes
+
+  def to_s
+    name
+  end
 end

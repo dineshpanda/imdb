@@ -36,4 +36,8 @@ class Casting < ApplicationRecord
   validates :movie_id, presence: true
 
   # Scopes
+
+  def to_s
+    character_name
+  end
 end

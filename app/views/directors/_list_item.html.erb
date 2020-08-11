@@ -1,7 +1,6 @@
 <%= link_to director, class: "list-group-item list-group-item-action d-flex align-items-center justify-content-between" do %>
   <div>
-    <%= director.name %>
-    
+    <%= director.to_s %>
     <small class="text-muted">
       <%= time_ago_in_words(director.updated_at) %> ago
     </small>

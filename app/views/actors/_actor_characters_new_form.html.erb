@@ -2,7 +2,7 @@
 
   <div class="form-group">
     <%= f.label :movie_id %>
-    <%= f.select :movie_id, options_from_collection_for_select(Movie.all, :id, :title, @casting.movie_id), {}, class: "form-control" %>
+    <%= f.select :movie_id, options_from_collection_for_select(Movie.all, :id, :to_s, @casting.movie_id), {}, class: "form-control" %>
   </div>
 
   <%= f.hidden_field :actor_id, value: @actor.id %>

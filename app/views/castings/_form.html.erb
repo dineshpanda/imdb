@@ -14,7 +14,7 @@
     <% end %>
 
     <%= f.label :movie_id %>
-    <%= f.select :movie_id, options_from_collection_for_select(Movie.all, :id, :title, @casting.movie_id), {}, class: "form-control" %>
+    <%= f.select :movie_id, options_from_collection_for_select(Movie.all, :id, :to_s, @casting.movie_id), {}, class: "form-control" %>
     <% if movie_id_was_invalid %>
       <% casting.errors.full_messages_for(:movie_id).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -36,7 +36,7 @@
     <% end %>
 
     <%= f.label :actor_id %>
-    <%= f.select :actor_id, options_from_collection_for_select(Actor.all, :id, :name, @casting.actor_id), {}, class: "form-control" %>
+    <%= f.select :actor_id, options_from_collection_for_select(Actor.all, :id, :to_s, @casting.actor_id), {}, class: "form-control" %>
     <% if actor_id_was_invalid %>
       <% casting.errors.full_messages_for(:actor_id).each do |message| %>
         <div class="invalid-feedback d-flex">

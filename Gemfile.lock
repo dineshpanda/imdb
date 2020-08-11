@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/firstdraft/graphiti-rails.git
-  revision: 58c44c089a7cd4e4509110eee60838d26b51c1ab
+  revision: ef9bf246e15beb553f6774fcb42a9f2b473cd162
   branch: develop
   specs:
     graphiti-rails (0.2.3)
@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/firstdraft/ideas_generators.git
-  revision: a05d325b697eb4d2c1278557d749ea68cef394e9
+  revision: 9d6dbd9b2603a800cf76ec25fec78d53e5c95d3b
   specs:
     ideas_generators (0.1.0)
       railties
@@ -96,7 +96,7 @@ GEM
     activerecord (6.0.3.2)
       activemodel (= 6.0.3.2)
       activesupport (= 6.0.3.2)
-    activerecord-import (1.0.5)
+    activerecord-import (1.0.6)
       activerecord (>= 3.2)
     activestorage (6.0.3.2)
       actionpack (= 6.0.3.2)
@@ -146,11 +146,11 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.1.6)
+    concurrent-ruby (1.1.7)
     crass (1.0.6)
     database_cleaner (1.8.5)
     diff-lcs (1.4.4)
-    diffy (3.3.0)
+    diffy (3.4.0)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.7.6)
@@ -197,7 +197,7 @@ GEM
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     gmaps4rails (2.1.2)
-    graphiti (1.2.20)
+    graphiti (1.2.21)
       activesupport (>= 4.1)
       concurrent-ruby (~> 1.0)
       dry-types (>= 0.15.0, < 2.0)
@@ -343,7 +343,7 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     rexml (3.2.4)
-    rollbar (2.26.1)
+    rollbar (2.27.0)
     rspec (3.9.0)
       rspec-core (~> 3.9.0)
       rspec-expectations (~> 3.9.0)
@@ -365,17 +365,17 @@ GEM
       rspec-mocks (~> 3.9)
       rspec-support (~> 3.9)
     rspec-support (3.9.3)
-    rubocop (0.88.0)
+    rubocop (0.89.1)
       parallel (~> 1.10)
       parser (>= 2.7.1.1)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 1.7)
       rexml
-      rubocop-ast (>= 0.1.0, < 1.0)
+      rubocop-ast (>= 0.3.0, < 1.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 2.0)
-    rubocop-ast (0.2.0)
-      parser (>= 2.7.0.1)
+    rubocop-ast (0.3.0)
+      parser (>= 2.7.1.4)
     rubocop-rails (2.5.2)
       activesupport
       rack (>= 1.1)

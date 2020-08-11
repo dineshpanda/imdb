@@ -4,7 +4,7 @@
 
   <div class="form-group">
     <%= f.label :actor_id %>
-    <%= f.select :actor_id, options_from_collection_for_select(Actor.all, :id, :name, @casting.actor_id), {}, class: "form-control" %>
+    <%= f.select :actor_id, options_from_collection_for_select(Actor.all, :id, :to_s, @casting.actor_id), {}, class: "form-control" %>
   </div>
 
   <div class="form-group">

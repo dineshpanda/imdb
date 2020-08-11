@@ -22,4 +22,8 @@ class Movie < ApplicationRecord
   validates :title, presence: true
 
   # Scopes
+
+  def to_s
+    title
+  end
 end

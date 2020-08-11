@@ -58,7 +58,7 @@
     <% end %>
 
     <%= f.label :director_id %>
-    <%= f.select :director_id, options_from_collection_for_select(Director.all, :id, :name, @movie.director_id), {}, class: "form-control" %>
+    <%= f.select :director_id, options_from_collection_for_select(Director.all, :id, :to_s, @movie.director_id), {}, class: "form-control" %>
     <% if director_id_was_invalid %>
       <% movie.errors.full_messages_for(:director_id).each do |message| %>
         <div class="invalid-feedback d-flex">
